@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minesweeper</title>
+  <style>* { margin: 0; padding: 0; }</style>
+  <script src="https://cdn.jsdelivr.net/npm/phaser@v3.60.0/dist/phaser.min.js"></script>
+  <script src="./src/scene/Intro.js"></script>
+  <script src="./src/scene/MineSweeper.js"></script>
+  <script src="./src/components/Grid.js"></script>
+  <script src="./src/components/Cell.js"></script>
+</head>
+<body>
+  <script>
+    (() => {
+      const config = {
+        type: Phaser.AUTO,
+        width: 800,
+        height: 600,
+        scale: {
+          mode: Phaser.Scale.FIT,
+          autoCenter: Phaser.Scale.CENTER_BOTH,
+        },
+        backgroundColor: '#2d2d2d',
+        scene: [Intro, MineSweeper]
+      }
+
+      const game = new Phaser.Game(config);
+    })();
+  </script>
+</body>
+</html>
